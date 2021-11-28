@@ -2,33 +2,35 @@ const { ApolloServer, gql } = require('apollo-server')
 
 const typeDefs = gql`
   type Student {
-    title: String
-    author: String
+    id: Int
+    name: String
+    class: String
   }
   type Query {
     student: [Student]
   }
 `
 
-const Student = [
+const student = [
   {
+    id: 1,
     name: 'Mohsin',
     class: 'BS CS'
   },
   {
+    id: 2,
     name: 'ibrar',
     class: 'BS IT'
   }
 ]
 const resolvers = {
   Query: {
-    student: () => Student
+    student: () => student
   }
 }
 
 const server = new ApolloServer({ typeDefs, resolvers })
 
-// The `listen` method launches a web server.
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`)
 })
