@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require('apollo-server')
+import { ApolloServer, gql } from 'apollo-server'
 
 const typeDefs = gql`
   type Student {
@@ -32,5 +32,5 @@ const resolvers = {
 const server = new ApolloServer({ typeDefs, resolvers })
 
 server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`)
+  console.log(` Server ready at ${url}`)
 })

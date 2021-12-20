@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-function App() {
+import './App.css'
+
+function App () {
+  const queryClient = new QueryClient()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <QueryClientProvider client={queryClient}>
+      <div style={{ display: 'flex' }}>
+        <div className='item'>Item 1</div>
+        <div className='item'>Item 2</div>
+        <div className='item'>Item 3</div>
+      </div>
+    </QueryClientProvider>
+  )
 }
 
-export default App;
+export default App

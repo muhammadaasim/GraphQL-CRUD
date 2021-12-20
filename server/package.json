@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
@@ -12,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^3.5.0",
-    "graphql": "^15.7.2"
+    "express": "^4.17.1",
+    "graphql": "^15.7.2",
+    "mongoose": "^6.0.14"
   }
 }
